@@ -3,8 +3,10 @@
 </p>
 
 <p>
-<img src="https://img.shields.io/badge/react-버전-skyblue"/> <img src="https://img.shields.io/badge/jdk-17-orange"/>
-<img src="https://img.shields.io/badge/python-버전-blue"/><img src="https://img.shields.io/badge/maria_db-버전-navy"/>
+<img src="https://img.shields.io/badge/react-버전-skyblue"/><br/>
+<img src="https://img.shields.io/badge/jdk-17-orange"/><br/>
+<img src="https://img.shields.io/badge/python-버전-blue"/><br/>
+<img src="https://img.shields.io/badge/maria_db-버전-navy"/><br/>
 </p>
 
  ## About Team
