@@ -1,5 +1,5 @@
 <p align="center">
-	<img src="https://i.pinimg.com/originals/92/27/32/9227329cbb79f341416a61bbaad34a1e.jpg" width="150" alt="aespa" />
+	<img src="https://i.pinimg.com/originals/92/27/32/9227329cbb79f341416a61bbaad34a1e.jpg" alt="aespa" />
 </p>
 
 [circleci-image]: https://img.shields.io/badge/react
