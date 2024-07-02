@@ -2,11 +2,10 @@
 	<img src="https://i0.wp.com/erizos.mx/wp-content/uploads/2020/10/aespa.jpg?w=1300&ssl=1" alt="aespa" />
 </p>
 
-<img src="https://img.shields.io/badge/react-버전-skyblue"/>
-<img src="https://img.shields.io/badge/jdk-17-orange"/>
-<img src="https://img.shields.io/badge/python-버전-blue"/>
-<img src="https://img.shields.io/badge/maria_db-버전-navy"/>
-
+<p>
+<img src="https://img.shields.io/badge/react-버전-skyblue"/> <img src="https://img.shields.io/badge/jdk-17-orange"/>
+<img src="https://img.shields.io/badge/python-버전-blue"/><img src="https://img.shields.io/badge/maria_db-버전-navy"/>
+</p>
 
  ## About Team
 
