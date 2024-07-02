@@ -1,5 +1,5 @@
 <p align="center">
-	<img src="https://i.pinimg.com/originals/92/27/32/9227329cbb79f341416a61bbaad34a1e.jpg" alt="aespa" />
+	<img src="https://i0.wp.com/erizos.mx/wp-content/uploads/2020/10/aespa.jpg?w=1300&ssl=1" alt="aespa" />
 </p>
 
 [circleci-image]: https://img.shields.io/badge/react
