@@ -5,7 +5,7 @@
 <div align="center">
 <img src="https://img.shields.io/badge/react-버전-skyblue"/>&nbsp;
 <img src="https://img.shields.io/badge/jdk-17-orange"/>&nbsp;
-<img src="https://img.shields.io/badge/python-버전-blue"/>&nbsp;
+<img src="https://img.shields.io/badge/python-3.8-blue"/>&nbsp;
 <img src="https://img.shields.io/badge/maria_db-버전-navy"/>&nbsp;
 </div>
 
