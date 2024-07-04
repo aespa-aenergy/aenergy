@@ -18,7 +18,7 @@
 
 
 ## Description
-
+머신러닝 기반의 신재생 에너지 발전량 예측 및 적지분석 플랫폼 서비스 구축
 
 
 ## Installation
