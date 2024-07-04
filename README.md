@@ -10,11 +10,10 @@
 </div>
 
  ## About Team
-<p> 채원석(Karina) <span style="font-size:10;">데이터 분석</span> </p>
-<p> 조하린(NingNing) <span style="font-size:10;">프론트엔드</span> </p>
-<p> 정영현(Winter) <span style="font-size:10;">데이터 분석</span></p>
-<p> 윤한결(Giselle) <span style="font-size:10;">PM, 백엔드</span></p>
- 
+|<img src="https://avatars.githubusercontent.com/u/81200079?v=4" width="150" height="150"/>|<img src="https://avatars.githubusercontent.com/u/112400744?v=4" width="150" height="150"/>|<img src="https://avatars.githubusercontent.com/u/126852968?v=4" width="150" height="150"/>|<img src="https://avatars.githubusercontent.com/u/108579242?v=4" width="150" height="150"/>|
+|:-:|:-:|:-:|:-:|
+|윤한결<br/>[@hangyeol17](https://github.com/hangyeol17)|정영현<br/>[@yh-skku](https://github.com/yh-skku)|조하린<br/>[@jxharin](https://github.com/jxharin)|채원석<br/>[@1suckk](https://github.com/1suckk)|
+|PM / BE<br/>|DA<br/>|FE<br/>|DA|
 
 
 ## Description
