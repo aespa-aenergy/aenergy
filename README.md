@@ -5,8 +5,8 @@
 <div align="center">
 <img src="https://img.shields.io/badge/python-3.8.10-skyblue"/>&nbsp;
 <img src="https://img.shields.io/badge/Django-4.2.14-orange"/>&nbsp;
-<img src="https://img.shields.io/badge/python-3.8.19-blue"/>&nbsp;
-<img src="https://img.shields.io/badge/maria_db-버전-navy"/>&nbsp;
+<img src="https://img.shields.io/badge/Node.js-20.15.1-blue"/>&nbsp;
+<img src="https://img.shields.io/badge/npm-10.7.0-navy"/>&nbsp;
 </div>
 
  ## About Team
