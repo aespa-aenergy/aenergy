@@ -9,8 +9,8 @@ const MainBanner = () => {
       <img src={BackgroundGif} alt="배너이미지" className="mainbanner_gif" />
       <div className="mainbanner_text">
         <div>
-          <h1>에너지 관리의 혁신</h1>
-          <h1>aenergy에서 시작하세요</h1>
+          <p>에너지관리의 혁신,</p>
+          <p>aenergy에서 시작하세요</p>
         </div>
         <div>
           <button className="mainbanner_btn">explore</button>

@@ -3,7 +3,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Encode Sans Expanded", sans-serif;
+  font-family: 'Spoqa Han Sans Neo', 'sans-serif'; 
 }
 
 /* Body styles */
@@ -20,7 +20,6 @@ body {
 /* Main content styles */
 .main {
   flex: 1;
-  padding-top: 60px; /* Ensure content starts below the fixed header */
   display: flex;
   flex-direction: column;
   align-items: center;

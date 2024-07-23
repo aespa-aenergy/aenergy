@@ -1,13 +1,13 @@
 import React from "react";
 import MainBanner from "../components/MainBanner.jsx";
-// import CarouselBanner from "../components/carouselBanner.jsx";
+import CarouselBanner from "../components/carouselBanner.jsx";
 
 function Main() {
   
   return (
     <div className="main">
       <MainBanner />
-      {/* <CarouselBanner /> */}
+      <CarouselBanner />
     </div>
   );
 }
