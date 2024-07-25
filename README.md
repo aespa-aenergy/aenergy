@@ -4,9 +4,18 @@
 
 <div align="center">
 <img src="https://img.shields.io/badge/react-버전-skyblue"/>&nbsp;
-<img src="https://img.shields.io/badge/jdk-17-orange"/>&nbsp;
-<img src="https://img.shields.io/badge/python-버전-blue"/>&nbsp;
-<img src="https://img.shields.io/badge/maria_db-버전-navy"/>&nbsp;
+<img src="https://img.shields.io/badge/Node.js-v20.16.0-blue"/>&nbsp;
+<img src="https://img.shields.io/badge/python-v3.9.10-yellow"/>&nbsp;
+<img src="https://img.shields.io/badge/npm-v.10.8.1-darkorange"/>&nbsp;
+<img src="https://img.shields.io/badge/docker-v27.0.3-lightblue"/>&nbsp;
+</div>
+
+<div align="center">
+<img src="https://img.shields.io/badge/aws-cli-2.17.17-orange"/>&nbsp;
+<img src="https://img.shields.io/badge/Node.js-v20.16.0-blue"/>&nbsp;
+<img src="https://img.shields.io/badge/python-v3.9.10-yellow"/>&nbsp;
+<img src="https://img.shields.io/badge/npm-v.10.8.1-darkorange"/>&nbsp;
+<img src="https://img.shields.io/badge/docker-v27.0.3-lightblue"/>&nbsp;
 </div>
 
  ## About Team
