@@ -15,7 +15,7 @@ function Map() {
     { locale: "경상북도", count: 2000 },
     { locale: "전라북도", count: 3300 },
     { locale: "충청남도", count: 10 },
-    { locale: "경상남도", count: 0 },
+    { locale: "경상남도", count: 980 },
     { locale: "전라남도", count: 250 },
     { locale: "울산광역시", count: 100 },
     { locale: "서울특별시", count: 10000 },
@@ -23,13 +23,13 @@ function Map() {
 
   const setColorByCount = (count) => {
     if (count === 0) return "#F1F1F1";
-    if (count > 5000) return "#79D3C4";
-    if (count > 3000) return "#43cdb6";
-    if (count > 1000) return "#61CDBB";
-    if (count > 200) return "#91D9CD";
-    if (count > 100) return "#A9DFD6";
-    if (count > 50) return "#C1E5DF";
-    if (count > 5) return "#D9EBE8";
+    if (count > 5000) return "#364b7a";
+    if (count > 3000) return "#64779f";
+    if (count > 1000) return "#50679a";
+    if (count > 200) return "#738cc1";
+    if (count > 100) return "#a1b3db";
+    if (count > 50) return "#c4cfe7";
+    if (count > 5) return "#eff3fc";
     else return "#ebfffd";
   };
 

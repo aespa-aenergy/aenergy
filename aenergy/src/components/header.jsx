@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./css/header.css";
-import Logo from "../assets/logoo.png";
+import Logo from "../assets/logo.png";
 
 function Header() {
   return (
@@ -14,7 +14,7 @@ function Header() {
         </div>
         <nav className="header_nav">
           <Link to="/team">팀 소개</Link>
-          <Link to="/consumption">지역별 사용량</Link>
+          <Link to="/conpro">지역별 사용량</Link>
           <Link to="/production">지역별 발전량</Link>
           <Link to="/graphs">그래프</Link>
         </nav>

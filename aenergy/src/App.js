@@ -1,9 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Main from './pages/main.jsx';
-// import Consumption from './pages/consumption.jsx';
-// import Production from './pages/production.jsx';
-// import Recommendations from './pages/recommendations.jsx';
+import ConsumptionProduction from './pages/consumptionProduction.jsx';
 import Header from './components/header.jsx';
 import Footer from './components/footer.jsx';
 import './App.css';
@@ -14,9 +12,7 @@ const App = () => {
       <Header />
       <Routes>
         <Route path="/" element={<Main />} />
-        {/* <Route path="/consumption" element={<Consumption />} />
-        <Route path="/production" element={<Production />} />
-        <Route path="/recommendations" element={<Recommendations />} /> */}
+        <Route path="/conpro" element={<ConsumptionProduction />} />
       </Routes>
       <Footer/>
     </Router>
