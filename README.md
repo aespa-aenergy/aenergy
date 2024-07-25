@@ -12,10 +12,10 @@
 
 <div align="center">
 <img src="https://img.shields.io/badge/aws_cli-2.17.17-orange"/>&nbsp;
-<img src="https://img.shields.io/badge/Node.js-v20.16.0-blue"/>&nbsp;
-<img src="https://img.shields.io/badge/python-v3.9.10-yellow"/>&nbsp;
-<img src="https://img.shields.io/badge/npm-v.10.8.1-darkorange"/>&nbsp;
-<img src="https://img.shields.io/badge/docker-v27.0.3-lightblue"/>&nbsp;
+<img src="https://img.shields.io/badge/Docker-v-darkblue"/>&nbsp;
+<img src="https://img.shields.io/badge/jupyter-v-green"/>&nbsp;
+<img src="https://img.shields.io/badge/tensorflow-v-black"/>&nbsp;
+<img src="https://img.shields.io/badge/kubernetes-v2-red"/>&nbsp;
 </div>
 
  ## About Team
