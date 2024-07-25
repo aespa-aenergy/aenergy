@@ -11,7 +11,7 @@
 </div>
 
 <div align="center">
-<img src="https://img.shields.io/badge/aws-cli-2.17.17-orange"/>&nbsp;
+<img src="https://img.shields.io/badge/aws_cli-2.17.17-orange"/>&nbsp;
 <img src="https://img.shields.io/badge/Node.js-v20.16.0-blue"/>&nbsp;
 <img src="https://img.shields.io/badge/python-v3.9.10-yellow"/>&nbsp;
 <img src="https://img.shields.io/badge/npm-v.10.8.1-darkorange"/>&nbsp;
