@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import Map from "../components/map.jsx";
 import "./css/conpro.css";
+import { motion } from "framer-motion";
+import LineGraph from "../components/lineGraph.jsx";
 
 function ConsumptionProduction() {
   const [year, setYear] = useState(2025);
@@ -43,6 +45,8 @@ function ConsumptionProduction() {
             </button>
           ))}
         </div>
+      </div>
+      <div className="map-container">
         <div className="toggle-switch" onClick={toggleView}>
           <div className={`toggle-switch-knob ${view}`}></div>
           <span
@@ -60,9 +64,62 @@ function ConsumptionProduction() {
             발전량
           </span>
         </div>
+        <motion.div
+          className="map"
+          initial={{ opacity: 0, scale: 0.5 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{
+            duration: 0.8,
+            delay: 0.5,
+            ease: [0, 0.71, 0.2, 1.01],
+          }}
+        >
+          <Map year={year} month={month} view={view} />
+        </motion.div>
       </div>
-      <div className="map-container">
-        <Map year={year} month={month} view={view} />
+
+      <div className="select-year-graph">
+        <div className="select-year">
+          <span>그래프</span> <span>|</span>
+          <select>
+            <option value="발전량">발전량</option>
+            <option value="소비량">소비량</option>
+          </select>
+          <select value={year} onChange={handleYearChange}>
+            {years.map((year) => (
+              <option key={year} value={year}>
+                {year}
+              </option>
+            ))}
+          </select>
+          <span> ~ </span>
+          <select value={year} onChange={handleYearChange}>
+            {years.map((year) => (
+              <option key={year} value={year}>
+                {year}
+              </option>
+            ))}
+          </select>
+        </div>
+        <div className="selected-year-graph">
+          <LineGraph />
+        </div>
+        <hr />
+      </div>
+      <div className="recommend-chatbot">
+        <h1>스마트하게 태양광 발전소 부지를 선정하세요! </h1>
+        <h1>최신 AI 기술과 데이터 분석이 도와드립니다.</h1>
+        <div className="chatbot-text">
+          <p>
+            aenergy의 챗봇은 최신 인공지능 기술과 수많은 데이터를 기반으로
+            태양광 발전소 부지를 예측합니다.
+          </p>
+          <p>
+            과학적 데이터와 인공지능의 힘을 결합하여 여러분의 태양광 발전소가
+            가장 효율적인 위치에 자리 잡을 수 있도록 돕겠습니다.
+          </p>
+          <button className="chatbot-btn">챗봇으로 추천받기</button>
+        </div>
       </div>
     </div>
   );

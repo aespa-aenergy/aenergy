@@ -1,6 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import Main from './pages/main.jsx';
+import Main from './pages/mainpage.jsx';
 import ConsumptionProduction from './pages/consumptionProduction.jsx';
 import Header from './components/header.jsx';
 import Footer from './components/footer.jsx';
@@ -13,7 +13,7 @@ const App = () => {
       <Routes>
         <Route path="/" element={<Main />} />
         <Route path="/conpro" element={<ConsumptionProduction />} />
-      </Routes>
+      </Routes> 
       <Footer/>
     </Router>
   );

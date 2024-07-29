@@ -1,8 +1,12 @@
 .header {
-  background-color: #1b2339;
-  display: flex;
-  justify-content: center;
   width: 100%;
+  z-index: 1000;
+  position: relative;
+}
+
+.header-transparent {
+  background: transparent;
+  position: absolute;
   top: 0;
 }
 
@@ -23,6 +27,10 @@
 .header_nav {
   display: flex;
   gap: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
 }
 
 .header_nav a {
