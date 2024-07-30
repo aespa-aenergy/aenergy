@@ -6,6 +6,7 @@ import Logo from "../assets/logo.png";
 function Header() {
   const location = useLocation();
   const isMainPage = location.pathname === '/';
+  
 
   return (
     <header className={`header ${isMainPage ? 'header-transparent' : ''}`}>

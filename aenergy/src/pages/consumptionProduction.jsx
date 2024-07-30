@@ -3,8 +3,15 @@ import Map from "../components/map.jsx";
 import "./css/conpro.css";
 import { motion } from "framer-motion";
 import LineGraph from "../components/lineGraph.jsx";
+import { Link, useNavigate } from "react-router-dom";
 
 function ConsumptionProduction() {
+  const navigate = useNavigate();
+
+  function handleClickChatPage() {
+    navigate("/chat");
+  }
+
   const [year, setYear] = useState(2025);
   const [month, setMonth] = useState(8);
   const [view, setView] = useState("consumption"); // 기본 값은 소비량
@@ -118,7 +125,7 @@ function ConsumptionProduction() {
             과학적 데이터와 인공지능의 힘을 결합하여 여러분의 태양광 발전소가
             가장 효율적인 위치에 자리 잡을 수 있도록 돕겠습니다.
           </p>
-          <button className="chatbot-btn">챗봇으로 추천받기</button>
+          <button className="chatbot-btn" onClick={handleClickChatPage}>챗봇으로 추천받기</button>
         </div>
       </div>
     </div>
