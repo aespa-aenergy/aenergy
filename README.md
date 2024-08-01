@@ -10,7 +10,7 @@
 </div>
 
  ## About Team
-|<img src="https://avatars.githubusercontent.com/u/81200079?v=4" width="150" height="150"/>|<img src="https://github.com/aespa-aenergy/aenergy/assets/126852968/3c4123fa-5c3f-48a3-9825-8ddfc0cb98b4" width="150" height="150"/>|<img src="https://github.com/aespa-aenergy/aenergy/assets/126852968/f6ec0dca-c578-4f24-bc40-2e1d0ea03cd6" width="150" height="150"/>|<img src="https://github.com/aespa-aenergy/aenergy/assets/126852968/af1c46a6-c37b-4f18-97fc-e6609eb2c011" width="150" height="150"/>|
+|<img src="https://github.com/user-attachments/assets/cfffae2a-2266-44ba-b0e0-449845ac4fbf" width="150" height="150"/>|<img src="https://github.com/aespa-aenergy/aenergy/assets/126852968/3c4123fa-5c3f-48a3-9825-8ddfc0cb98b4" width="150" height="150"/>|<img src="https://github.com/aespa-aenergy/aenergy/assets/126852968/f6ec0dca-c578-4f24-bc40-2e1d0ea03cd6" width="150" height="150"/>|<img src="https://github.com/aespa-aenergy/aenergy/assets/126852968/af1c46a6-c37b-4f18-97fc-e6609eb2c011" width="150" height="150"/>|
 |:-:|:-:|:-:|:-:|
 |윤한결<br/>[@hangyeol17](https://github.com/hangyeol17)|정영현<br/>[@yh-skku](https://github.com/yh-skku)|조하린<br/>[@jxharin](https://github.com/jxharin)|채원석<br/>[@1suckk](https://github.com/1suckk)|
 |PM / BE<br/>|DA<br/>|FE<br/>|DA|
