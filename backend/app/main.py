@@ -10,7 +10,7 @@ with open('data/predictions.json', 'r') as f:
 
 @app.get("/")
 def read_root():
-    return {"Hello": "World"}
+    return {"AENERGY": "TEST"}
 
 @app.get("/predictions")
 def get_predictions():
