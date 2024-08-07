@@ -3,10 +3,10 @@
 </p>
 
 <div align="center">
-<img src="https://img.shields.io/badge/python-3.8.10-skyblue"/>&nbsp;
-<img src="https://img.shields.io/badge/Django-4.2.14-orange"/>&nbsp;
-<img src="https://img.shields.io/badge/Node.js-20.15.1-blue"/>&nbsp;
-<img src="https://img.shields.io/badge/npm-10.7.0-navy"/>&nbsp;
+<img src="https://img.shields.io/badge/python-3.9.10-skyblue"/>&nbsp;
+<img src="https://img.shields.io/badge/fastapi-v-orange"/>&nbsp;
+<img src="https://img.shields.io/badge/docker-27.0.3-blue"/>&nbsp;
+<img src="https://img.shields.io/badge/npm-10.8.1-navy"/>&nbsp;
 </div>
 
  ## About Team
