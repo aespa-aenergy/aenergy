@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import "./css/chatpage.css";
-import BotIcon from "../assets/leaf.png";
-import UserIcon from "../assets/user.png";
-import InfoIcon from "../assets/info.png";
+import "../assets/styles/pages/chatpage.css";
+import BotIcon from "../assets/chat/leaf.png";
+import UserIcon from "../assets/chat/user.png";
+import InfoIcon from "../assets/chat/info.png";
 
 const ChatMessage = ({ type, text }) => {
   return (

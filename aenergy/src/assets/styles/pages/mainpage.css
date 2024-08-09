@@ -1,0 +1,356 @@
+.main {
+  display: flex;
+  flex-direction: column;
+}
+
+.main-mainBanner,
+.main-carousel {
+  flex: 1;
+}
+
+/* MainBanner */
+
+.mainbanner {
+  width: 100%;
+  height: 95vh;
+
+  position: relative;
+}
+
+.mainbanner_gif {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+video {
+  width: 100%;
+}
+
+.mainbanner_text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -80%);
+  color: white;
+  text-align: center;
+  font-size: 60px;
+  word-spacing: 5px;
+  font-weight: 700;
+  letter-spacing: 4px;
+  line-height: 130px;
+  text-align: center;
+  overflow: hidden;
+}
+
+.mainbanner_text p {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(100%);
+  animation: reveal 1s cubic-bezier(0.01, 0, 0.175, 1) forwards;
+}
+
+.mainbanner_btn {
+  width: 30%;
+  height: 50px;
+  font-weight: bold;
+  border-radius: 30px;
+  background-color: rgba(0, 0, 0, 0);
+  color: #ffffff;
+  border: 1px solid white;
+  font-size: 20px;
+  font-weight: 100;
+}
+
+.mainbanner_arrow_container {
+  position: absolute;
+  bottom: 100px;
+  left: 48%;
+}
+
+.mainbanner_arrow {
+  width: 80px;
+  opacity: 0.5;
+  cursor: pointer;
+}
+
+@keyframes reveal {
+  0% {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* css/carouselBanner.css */
+.carousel-container {
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
+}
+
+.carousel-container img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.banner-content {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 20px;
+  background-color: #ffffff; /* 배경 색상 */
+  color: rgb(255, 255, 255);
+  height: 540px; /* 슬라이드 높이 */
+}
+
+.banner-item1 {
+  width: 25%;
+  padding: 30px;
+  background-color: #1b2339;
+  border-radius: 15px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  height: 42vh;
+}
+
+.banner-item1 h3 {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+}
+
+.banner-item1 p {
+  font-size: 1.1rem;
+  line-height: 1.5;
+  padding: 20px;
+}
+
+.banner-content2 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 100px;
+  background-color: #fff;
+  color: #333;
+  height: 540px;
+}
+
+.banner-content2 h2 {
+  font-size: 3rem;
+  margin-bottom: 30px;
+  padding-bottom: 50px;
+  white-space: nowrap;
+  text-align: center;
+  display: inline-block;
+}
+
+.stats-container {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+}
+
+.banner-item2 {
+  text-align: center;
+  width: 30%;
+  margin-top: 0;
+}
+
+.banner-item2 h3 {
+  font-size: 3rem;
+  color: #3366ff;
+  padding-bottom: 20px;
+}
+
+.banner-item2 p {
+  font-size: 2rem;
+  color: #666;
+}
+.banner-content3 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+  background-color: #fff;
+  color: #333;
+  height: 540px;
+  text-align: center;
+}
+
+.banner-content3 h2 {
+  font-size: 2rem;
+  margin-bottom: 50px;
+}
+
+.team-button {
+  padding: 10px 20px;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #333;
+  background-color: #fff;
+  border: 2px solid #333;
+  border-radius: 20px;
+  cursor: pointer;
+  margin-bottom: 30px;
+}
+
+.banner-content3 img.team-image {
+  width: 70%;
+  height: auto;
+  display: block;
+  margin: 0 auto; /* 이미지 중앙 정렬 */
+}
+
+.dots_custom {
+  display: inline-block;
+  vertical-align: middle;
+  margin: auto 0;
+  padding: 0;
+}
+
+.dots_custom li {
+  list-style: none;
+  cursor: pointer;
+  display: inline-block;
+  margin: 0 6px;
+  padding: 0;
+}
+
+.dots_custom li button {
+  border: none;
+  background: #d1d1d1;
+  color: transparent;
+  cursor: pointer;
+  display: block;
+  height: 8px;
+  width: 8px;
+  border-radius: 100%;
+  padding: 0;
+}
+
+.dots_custom li.slick-active button {
+  background-color: #4424b7;
+}
+
+/* SolarPowerPlantMap.css */
+.plant-map-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 1000px;
+  background-color: #1a1a2e; /* Dark background for contrast */
+  color: #ffffff; /* White text for visibility */
+}
+
+.plant-map {
+  flex: 1;
+  width: 10%;
+  padding: 30px 0;
+  margin-left: 100px;
+}
+.southkorea-map {
+  width: 70%;
+}
+
+.plant-current-status {
+  flex: 1;
+  max-width: 50%; /* Ensures the text container doesn't take too much space */
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  border-radius: 20px;
+  padding-left: 80px;
+}
+
+.plant-current-status h3 {
+  margin-bottom: 20px;
+  font-size: 24px;
+}
+
+.plant-current-status p {
+  padding-bottom: 40px;
+  font-size: 23px;
+}
+
+.plant-map {
+  text-align: center;
+  font-size: 20px;
+}
+
+.status-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  line-height: 1.5;
+  text-align: left;
+  font-weight: 100;
+  padding-left: 30px;
+}
+
+.status-list li {
+  font-size: 18px;
+  padding: 5px 0;
+}
+
+.news-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px; /* 아이템 사이의 간격 */
+  padding: 100px;
+  background-color: #1b2339; /* 배경 색상 */
+}
+
+.news-container {
+  display: flex;
+  background-color: #1b2339; /* 배경 색상 */
+  color: white;
+  width: calc(50% - 10px); /* 두 개의 열 */
+  margin-bottom: 50px;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.news-image {
+  width: 50%;
+  background-color: #d1d5db; /* 연한 그레이 색상 */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.news-image img {
+  width: 100%;
+  height: auto;
+}
+
+.news-content {
+  width: 50%;
+  background-color: #111827; /* 짙은 그레이 색상 */
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.news-content h2 {
+  margin: 0 0 10px;
+  font-size: 1.2em;
+}
+
+.news-content p {
+  margin: 0;
+  font-size: 0.9em;
+  color: #9ca3af; /* 텍스트 색상 */
+}

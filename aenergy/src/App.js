@@ -24,3 +24,13 @@ const App = () => {
 };
 
 export default App;
+
+/**
+ * 
+ * <Link to="/chatbot">Chatbot</Link>
+        <Link to="/predictions">Predictions</Link>
+
+        <Route path='/chatbot' element={<Chatbot />}/>
+        <Route path='/chatbot' element={<Predictions />}/>
+        
+ */

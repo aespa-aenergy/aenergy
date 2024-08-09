@@ -1,35 +1,69 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Map from "../components/map.jsx";
-import "./css/conpro.css";
+
 import { motion } from "framer-motion";
-import LineGraph from "../components/lineGraph.jsx";
 import { Link, useNavigate } from "react-router-dom";
+import productionData from "../data/transformed_karina.json"; // 발전량 데이터
+import consumptionData from "../data/transformed_winter.json"; // 소비량 데이터
+import ZoomGraph from "../components/zoomGraph.jsx";
+import RegionMonthProduction from "../data/measure.json";
+import RegionMonthConsumption from "../data/power_prediction_data.json";
+import ToggleSwitch from "../components/toggleSwitch";
+import SelectYearGraph from "../components/RegionGraph.jsx";
+import RecommendChatbot from "../components/recommendChatbot";
+import "../assets/styles/pages/conpro.css";
 
 function ConsumptionProduction() {
-  const navigate = useNavigate();
-
-  function handleClickChatPage() {
-    navigate("/chat");
-  }
-
-  const [year, setYear] = useState(2025);
+  const [year, setYear] = useState(2024);
   const [month, setMonth] = useState(8);
-  const [view, setView] = useState("consumption"); // 기본 값은 소비량
+  const [mapView, setMapView] = useState("production"); // Map에서 사용할 view 상태
+  const [graphView, setGraphView] = useState("production"); // Graph에서 사용할 view 상태
+  const [selectedData, setSelectedData] = useState({});
+  const [region, setRegion] = useState("서울특별시");
 
-  const years = [2023, 2024, 2025, 2026, 2027];
+  const years = [2019, 2020, 2021, 2022, 2023, 2024, 2025, 2026];
   const months = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
 
-  const handleYearChange = (e) => {
-    setYear(parseInt(e.target.value));
+  const regionMapping = {
+    서울특별시: "Seoul",
+    경기도: "Gyeonggi",
+    인천광역시: "Incheon",
+    강원도: "Gangwon",
+    충청북도: "Chungbuk",
+    충청남도: "Chungnam",
+    대전광역시: "Daejeon",
+    경상북도: "Gyeongbuk",
+    대구광역시: "Daegu",
+    경상남도: "Gyeongnam",
+    울산광역시: "Ulsan",
+    부산광역시: "Busan",
+    전라북도: "Jeonbuk",
+    광주광역시: "Gwangju",
+    전라남도: "Jeonnam",
+    제주특별자치도: "Jeju",
   };
 
-  const handleMonthChange = (month) => {
-    setMonth(month);
+  useEffect(() => {
+    const dateKey = `${year}-${String(month).padStart(2, "0")}-01`;
+    const data = mapView === "production" ? productionData : consumptionData;
+    setSelectedData(data[dateKey] || {});
+  }, [year, month, mapView]);
+
+  const handleYearChange = (e) => setYear(parseInt(e.target.value));
+  const handleMonthChange = (month) => setMonth(month);
+  const toggleMapView = () => setMapView(mapView === "consumption" ? "production" : "consumption");
+  const handleGraphViewChange = (e) => setGraphView(e.target.value);
+  const handleRegionChange = (e) => setRegion(e.target.value);
+
+  const getGraphData = () => {
+    const mappedRegion = regionMapping[region];
+    return graphView === "production"
+      ? RegionMonthProduction[mappedRegion]
+      : RegionMonthConsumption[mappedRegion];
   };
 
-  const toggleView = () => {
-    setView(view === "consumption" ? "production" : "consumption");
-  };
+  const navigate = useNavigate();
+  const handleClickChatPage = () => navigate("/chat");
 
   return (
     <div className="consumption-production-container">
@@ -53,24 +87,10 @@ function ConsumptionProduction() {
           ))}
         </div>
       </div>
+      
+      <ToggleSwitch view={mapView} toggleView={toggleMapView} />
+
       <div className="map-container">
-        <div className="toggle-switch" onClick={toggleView}>
-          <div className={`toggle-switch-knob ${view}`}></div>
-          <span
-            className={`toggle-switch-label ${
-              view === "consumption" ? "active" : ""
-            }`}
-          >
-            소비량
-          </span>
-          <span
-            className={`toggle-switch-label ${
-              view === "production" ? "active" : ""
-            }`}
-          >
-            발전량
-          </span>
-        </div>
         <motion.div
           className="map"
           initial={{ opacity: 0, scale: 0.5 }}
@@ -81,53 +101,20 @@ function ConsumptionProduction() {
             ease: [0, 0.71, 0.2, 1.01],
           }}
         >
-          <Map year={year} month={month} view={view} />
+          <Map data={selectedData} view={mapView} />
         </motion.div>
       </div>
 
-      <div className="select-year-graph">
-        <div className="select-year">
-          <span>그래프</span> <span>|</span>
-          <select>
-            <option value="발전량">발전량</option>
-            <option value="소비량">소비량</option>
-          </select>
-          <select value={year} onChange={handleYearChange}>
-            {years.map((year) => (
-              <option key={year} value={year}>
-                {year}
-              </option>
-            ))}
-          </select>
-          <span> ~ </span>
-          <select value={year} onChange={handleYearChange}>
-            {years.map((year) => (
-              <option key={year} value={year}>
-                {year}
-              </option>
-            ))}
-          </select>
-        </div>
-        <div className="selected-year-graph">
-          <LineGraph />
-        </div>
-        <hr />
-      </div>
-      <div className="recommend-chatbot">
-        <h1>스마트하게 태양광 발전소 부지를 선정하세요! </h1>
-        <h1>최신 AI 기술과 데이터 분석이 도와드립니다.</h1>
-        <div className="chatbot-text">
-          <p>
-            aenergy의 챗봇은 최신 인공지능 기술과 수많은 데이터를 기반으로
-            태양광 발전소 부지를 예측합니다.
-          </p>
-          <p>
-            과학적 데이터와 인공지능의 힘을 결합하여 여러분의 태양광 발전소가
-            가장 효율적인 위치에 자리 잡을 수 있도록 돕겠습니다.
-          </p>
-          <button className="chatbot-btn" onClick={handleClickChatPage}>챗봇으로 추천받기</button>
-        </div>
-      </div>
+      <SelectYearGraph
+        view={graphView}
+        region={region}
+        regions={Object.keys(regionMapping)}
+        onViewChange={handleGraphViewChange}
+        onRegionChange={handleRegionChange}
+        graphData={getGraphData()}
+      />
+
+      <RecommendChatbot onClickChatPage={handleClickChatPage} />
     </div>
   );
 }
