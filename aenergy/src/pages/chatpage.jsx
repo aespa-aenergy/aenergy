@@ -43,7 +43,13 @@ const ChatPage = () => {
           headers: {
             "Content-Type": "application/json",
           },
-          body: JSON.stringify({ message }),
+          body: JSON.stringify({
+            messages: [
+              {
+                content: message,
+              },
+            ],
+          }),
         });
 
         const data = await res.json();
@@ -88,7 +94,10 @@ const ChatPage = () => {
         {chatHistory.length === 0 ? (
           <div className="welcome-message">
             <h1>aenergy Bot에 오신 것을 환영합니다!</h1>
-            <p>aenergy bot은 수많은 데이터를 통해 최적의 태양광 발전소 부지를 추천해드립니다.</p>
+            <p>
+              aenergy bot은 수많은 데이터를 통해 최적의 태양광 발전소 부지를
+              추천해드립니다.
+            </p>
           </div>
         ) : (
           chatHistory.map((chat, index) => (
