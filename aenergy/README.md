@@ -12,7 +12,8 @@
 
 ### `npm install @amcharts/amcharts5`
 
-npm install @amcharts/amcharts5-geodata
+### `npm install @amcharts/amcharts5-geodata`
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
