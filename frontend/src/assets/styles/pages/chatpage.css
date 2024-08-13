@@ -1,0 +1,131 @@
+.chat-container {
+  background-color: #f9fafb;
+  width: 100%;
+  height: calc(100vh - 60px); /* 헤더 높이를 제외한 화면 높이 */
+  display: flex;
+  flex-direction: column;
+}
+
+.chat-header {
+  color: #1b2339;
+  font-size: 15px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 1px #1b2339;
+  z-index: 1000; 
+}
+
+.chat-body {
+  flex-grow: 1;
+  padding: 20px;
+  overflow-y: auto;
+  font-size: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  max-height: calc(100vh - 140px); /* 헤더와 입력란을 제외한 높이 */
+}
+
+.chat-body.empty {
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.welcome-message h1 {
+  font-size: 24px;
+  color: #002b5b;
+  margin-bottom: 10px;
+}
+
+.welcome-message p {
+  font-size: 16px;
+  color: #1b2339;
+}
+
+.message-bot,
+.message-user {
+  display: flex;
+  align-items: center;
+  margin: 5px 0;
+  position: relative;
+}
+
+.message-bot {
+  flex-direction: row;
+}
+
+.message-user {
+  flex-direction: row-reverse;
+  justify-content: flex-end;
+  align-items: center;
+  width: 100%;
+  padding-right: 10px;
+  box-sizing: border-box;
+}
+
+.message-bubble-bot {
+  background-color: #e1e9f1;
+  color: #000;
+  border-radius: 15px;
+  padding: 10px 15px;
+  max-width: 50%;
+  position: relative;
+}
+
+.message-bubble-user {
+  background-color: #3e5978;
+  color: white;
+  border-radius: 15px;
+  padding: 10px 15px;
+  max-width: 50%;
+  margin-left: auto;
+  position: relative;
+}
+
+.icon {
+  margin: 0 10px;
+  width: 40px;
+}
+
+.info-icon {
+  width: 30px;
+  float: left;
+  padding-left: 10px;
+}
+
+.message-input-container {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  border-top: 1px solid #e0e0e0;
+  background-color: #fff;
+}
+
+.message-input {
+  flex-grow: 1;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 10px;
+  font-size: 14px;
+  margin-right: 10px;
+  outline: none;
+}
+
+.message-send-button {
+  background-color: #002b5b;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 15px;
+  cursor: pointer;
+}
+
+.message-send-button:hover {
+  background-color: #004080;
+}
+
+.message-send-button:active {
+  background-color: #001f3f;
+}

@@ -1,0 +1,399 @@
+.main {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.main-mainBanner,
+.main-carousel {
+  flex: 1;
+}
+
+/* MainBanner */
+
+.mainbanner {
+  width: 100%;
+  height: 95vh;
+
+  position: relative;
+}
+
+.mainbanner_gif {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+video {
+  width: 100%;
+}
+
+.mainbanner_text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -80%);
+  color: white;
+  text-align: center;
+  font-size: 55px;
+  word-spacing: 5px;
+  font-weight: 700;
+  letter-spacing: 4px;
+  line-height: 130px;
+  text-align: center;
+  overflow: hidden;
+}
+
+.mainbanner_text p {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(100%);
+  animation: reveal 1s cubic-bezier(0.01, 0, 0.175, 1) forwards;
+}
+
+.mainbanner_btn {
+  width: 30%;
+  height: 50px;
+  font-weight: bold;
+  border-radius: 30px;
+  background-color: rgba(0, 0, 0, 0);
+  color: #ffffff;
+  border: 1px solid white;
+  font-size: 20px;
+  font-weight: 100;
+}
+
+.mainbanner_arrow_container {
+  position: absolute;
+  bottom: 100px;
+  left: 48%;
+}
+
+.mainbanner_arrow {
+  width: 80px;
+  opacity: 0.5;
+  cursor: pointer;
+}
+
+@keyframes reveal {
+  0% {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* css/carouselBanner.css */
+.carousel-container {
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
+}
+
+.carousel-container img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.banner-content {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 20px;
+  background-color: #ffffff; /* 배경 색상 */
+  color: rgb(255, 255, 255);
+  height: 540px; /* 슬라이드 높이 */
+}
+
+.banner-item1 {
+  width: 25%;
+  padding: 30px;
+  background-color: #1b2339;
+  border-radius: 15px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  height: 42vh;
+}
+
+.banner-item1 h3 {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+}
+
+.banner-item1 p {
+  font-size: 1.1rem;
+  line-height: 1.5;
+  padding: 20px;
+  font-weight: 200;
+}
+
+.banner-content2 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 100px;
+  background-color: #fff;
+  color: #333;
+  height: 540px;
+}
+
+.banner-content2 h2 {
+  font-size: 3rem;
+  margin-bottom: 30px;
+  padding-bottom: 50px;
+  white-space: nowrap;
+  text-align: center;
+  display: inline-block;
+}
+
+.stats-container {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+}
+
+.banner-item2 {
+  text-align: center;
+  width: 30%;
+  margin-top: 0;
+}
+
+.banner-item2 h3 {
+  font-size: 3rem;
+  color: #3366ff;
+  padding-bottom: 20px;
+}
+
+.banner-item2 p {
+  font-size: 2rem;
+  color: #666;
+}
+.banner-content3 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+  background-color: #fff;
+  color: #333;
+  height: 540px;
+  text-align: center;
+}
+
+.banner-content3 h2 {
+  font-size: 2rem;
+  margin-bottom: 50px;
+}
+
+.team-button {
+  padding: 10px 20px;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #333;
+  background-color: #fff;
+  border: 2px solid #333;
+  border-radius: 20px;
+  cursor: pointer;
+  margin-bottom: 30px;
+}
+
+.banner-content3 img.team-image {
+  width: 70%;
+  height: auto;
+  display: block;
+  margin: 0 auto; /* 이미지 중앙 정렬 */
+}
+
+.dots_custom {
+  display: inline-block;
+  vertical-align: middle;
+  margin: auto 0;
+  padding: 0;
+}
+
+.dots_custom li {
+  list-style: none;
+  cursor: pointer;
+  display: inline-block;
+  margin: 0 6px;
+  padding: 0;
+}
+
+.dots_custom li button {
+  border: none;
+  background: #d1d1d1;
+  color: transparent;
+  cursor: pointer;
+  display: block;
+  height: 8px;
+  width: 8px;
+  border-radius: 100%;
+  padding: 0;
+}
+
+.dots_custom li.slick-active button {
+  background-color: #4424b7;
+}
+
+/* SolarPowerPlantMap.css */
+.plant-map-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 1000px;
+  color: #ffffff;
+}
+
+.plant-map {
+  flex: 1;
+  padding: 30px 0;
+  margin: 100px;
+  border-radius: 30px;
+}
+.plant-current-status {
+  flex: 1;
+  max-width: 80%; /* Ensures the text container doesn't take too much space */
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  border-radius: 20px;
+  padding-left: 80px;
+}
+
+.map-description {
+  margin-bottom: 50px; /* 2번 영역과의 간격 */
+  text-align: center;
+  justify-content: flex-start;
+}
+
+.map-description h1{
+  padding-bottom: 10px;
+}
+
+.map-description p{
+  font-weight: 100;
+}
+
+.total-plant{
+  margin-bottom: 50px;
+}
+/* news */
+.news-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px; /* 아이템 사이의 간격 */
+  padding: 100px;
+  background-color: #1b2339; /* 배경 색상 */
+}
+
+.news-container {
+  display: flex;
+  background-color: #1b2339; /* 배경 색상 */
+  color: white;
+  width: calc(50% - 10px); /* 두 개의 열 */
+  margin-bottom: 50px;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.news-image {
+  width: 80%;
+  background-color: #d1d5db; /* 연한 그레이 색상 */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-height: 200px;
+}
+
+.news-image img {
+  width: 100%;
+  height: auto;
+}
+
+.news-content {
+  width: 70%;
+  background-color: #111827; /* 짙은 그레이 색상 */
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.news-content h2 {
+  margin: 0 0 10px;
+  font-size: 1.0em;
+}
+
+.news-content p {
+  margin: 0;
+  font-size: 0.8em;
+  color: #9ca3af; /* 텍스트 색상 */
+}
+
+/* icon */
+.icon-list {
+  text-align: center;
+  padding: 20px;
+}
+
+.icon-list h1 {
+  font-size: 35px;
+  margin-bottom: 50px;
+}
+
+.icon-list-items {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+}
+
+.icon-list-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #6c757d;
+  transition: color 0.3s;
+}
+
+.icon-list-item .icon {
+  font-size: 48px;
+  margin-bottom: 10px;
+}
+
+.icon-list-item .title {
+  font-size: 18px;
+  font-weight: 300;
+  padding: 5px;
+  color: white;
+}
+
+.icon-list-item:hover {
+  color: #0d6efd;
+}
+
+.icon-list-item .icon {
+  color: inherit;
+}
+
+.platform-description{
+  width: 1500px;
+  margin: 0 auto;
+  padding-top: 40px;
+  font-weight: 200;
+  font-size: 20px;
+}
+
+.platform-description p {
+  text-align: center;
+  word-spacing: 3px;
+  line-height: 40px;
+}
