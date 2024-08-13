@@ -87,7 +87,7 @@ add_routes(
 async def chat(request: InputChat):
     try:
         # 체인에서 결과 가져오기
-        result = await chat_chain.invoke({"messages": request.messages})
+        result = chat_chain.invoke({"messages": request.messages})
         
         # 결과를 JSON으로 반환
         return {"response": result}
