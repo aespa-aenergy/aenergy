@@ -1,19 +1,19 @@
 .chat-container {
   background-color: #f9fafb;
   width: 100%;
-  min-height: 100vh;
+  height: calc(100vh - 60px); /* 헤더 높이를 제외한 화면 높이 */
   display: flex;
   flex-direction: column;
 }
 
 .chat-header {
   color: #1b2339;
-  padding: 10px;
-  font-size: 20px;
+  font-size: 15px;
   font-weight: bold;
   display: flex;
   align-items: center;
   box-shadow: 0 1px #1b2339;
+  z-index: 1000; 
 }
 
 .chat-body {
@@ -21,6 +21,27 @@
   padding: 20px;
   overflow-y: auto;
   font-size: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  max-height: calc(100vh - 140px); /* 헤더와 입력란을 제외한 높이 */
+}
+
+.chat-body.empty {
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.welcome-message h1 {
+  font-size: 24px;
+  color: #002b5b;
+  margin-bottom: 10px;
+}
+
+.welcome-message p {
+  font-size: 16px;
+  color: #1b2339;
 }
 
 .message-bot,
@@ -47,29 +68,29 @@
 .message-bubble-bot {
   background-color: #e1e9f1;
   color: #000;
-  border-radius: 10px;
-  padding: 10px;
-  max-width: 80%;
+  border-radius: 15px;
+  padding: 10px 15px;
+  max-width: 50%;
   position: relative;
 }
 
 .message-bubble-user {
-  background-color: #002b5b;
+  background-color: #3e5978;
   color: white;
-  border-radius: 10px;
-  padding: 10px;
-  max-width: 80%;
+  border-radius: 15px;
+  padding: 10px 15px;
+  max-width: 50%;
   margin-left: auto;
   position: relative;
 }
 
 .icon {
   margin: 0 10px;
-  width: 50px;
+  width: 40px;
 }
 
 .info-icon {
-  width: 35px;
+  width: 30px;
   float: left;
   padding-left: 10px;
 }

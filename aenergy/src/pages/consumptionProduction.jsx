@@ -1,11 +1,9 @@
 import React, { useState, useEffect } from "react";
-import Map from "../components/map.jsx";
-
+import { SimpleSouthKoreaMapChart } from "react-simple-south-korea-map-chart";
 import { motion } from "framer-motion";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import productionData from "../data/transformed_karina.json"; // 발전량 데이터
 import consumptionData from "../data/transformed_winter.json"; // 소비량 데이터
-import ZoomGraph from "../components/zoomGraph.jsx";
 import RegionMonthProduction from "../data/measure.json";
 import RegionMonthConsumption from "../data/power_prediction_data.json";
 import ToggleSwitch from "../components/toggleSwitch";
@@ -18,7 +16,7 @@ function ConsumptionProduction() {
   const [month, setMonth] = useState(8);
   const [mapView, setMapView] = useState("production"); // Map에서 사용할 view 상태
   const [graphView, setGraphView] = useState("production"); // Graph에서 사용할 view 상태
-  const [selectedData, setSelectedData] = useState({});
+  const [selectedData, setSelectedData] = useState([]);
   const [region, setRegion] = useState("서울특별시");
 
   const years = [2019, 2020, 2021, 2022, 2023, 2024, 2025, 2026];
@@ -41,17 +39,29 @@ function ConsumptionProduction() {
     광주광역시: "Gwangju",
     전라남도: "Jeonnam",
     제주특별자치도: "Jeju",
+    세종특별자치시: "Sejong",
   };
 
   useEffect(() => {
     const dateKey = `${year}-${String(month).padStart(2, "0")}-01`;
     const data = mapView === "production" ? productionData : consumptionData;
-    setSelectedData(data[dateKey] || {});
+    const selected = data[dateKey] || {};
+    const transformedData = Object.keys(selected).map((locale) => ({
+      locale:
+        Object.keys(regionMapping).find(
+          (key) => regionMapping[key] === locale
+        ) || locale,
+      count: selected[locale] || 0,
+      unit: "MWh",
+    }));
+
+    setSelectedData(transformedData);
   }, [year, month, mapView]);
 
   const handleYearChange = (e) => setYear(parseInt(e.target.value));
   const handleMonthChange = (month) => setMonth(month);
-  const toggleMapView = () => setMapView(mapView === "consumption" ? "production" : "consumption");
+  const toggleMapView = () =>
+    setMapView(mapView === "consumption" ? "production" : "consumption");
   const handleGraphViewChange = (e) => setGraphView(e.target.value);
   const handleRegionChange = (e) => setRegion(e.target.value);
 
@@ -64,6 +74,24 @@ function ConsumptionProduction() {
 
   const navigate = useNavigate();
   const handleClickChatPage = () => navigate("/chat");
+
+  const setColorByCount = (count) => {
+    if (mapView === "production") {
+      if (count > 500000) return "#5d9164";
+      if (count > 200000) return "#65a86f";
+      if (count > 100000) return "#75c981";
+      if (count > 50000) return "#8cd196";
+      if (count > 10000) return "#a3d9ab";
+      else return "#f0fced";
+    } else {
+      if (count > 10000000) return "#4d89b3";
+      if (count > 3000000) return "#5e97bf";
+      if (count > 2000000) return "#6fadd9";
+      if (count > 1000000) return "#7fbeeb";
+      if (count > 100000) return "#90cbf5";
+      else return "#E8F5FF";
+    }
+  };
 
   return (
     <div className="consumption-production-container">
@@ -87,10 +115,14 @@ function ConsumptionProduction() {
           ))}
         </div>
       </div>
-      
-      <ToggleSwitch view={mapView} toggleView={toggleMapView} />
 
       <div className="map-container">
+        <ToggleSwitch
+          view={mapView}
+          toggleView={toggleMapView}
+          className="map-toggle-switch"
+        />
+
         <motion.div
           className="map"
           initial={{ opacity: 0, scale: 0.5 }}
@@ -101,7 +133,12 @@ function ConsumptionProduction() {
             ease: [0, 0.71, 0.2, 1.01],
           }}
         >
-          <Map data={selectedData} view={mapView} />
+          <SimpleSouthKoreaMapChart
+            data={selectedData}
+            unit="MWh"
+            setColorByCount={setColorByCount}
+            className="map-component"
+          />
         </motion.div>
       </div>
 

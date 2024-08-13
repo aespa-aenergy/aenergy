@@ -1,10 +1,11 @@
 import React from "react";
 import "../assets/styles/pages/mainpage.css";
 
-import MainBanner from "../components/Banner/mainBanner.jsx";
-import CarouselBanner from "../components/Banner/carouselBanner.jsx";
-import SolarPowerPlantMap from "../components/Banner/solarPowerPlantMap.jsx";
-import NewsBanner from "../components/Banner/newsList.jsx";
+import MainBanner from "../components/main/mainBanner.jsx";
+import CarouselBanner from "../components/main/carouselBanner.jsx";
+import SolarPowerPlantMap from "../components/main/solarPowerPlantMap.jsx";
+import NewsBanner from "../components/main/newsList.jsx";
+import IconList from "../components/main/iconList.jsx";
 
 function Mainpage() {
   return (
@@ -20,6 +21,9 @@ function Mainpage() {
       </div>
       <div className="main-newsBanner">
         <NewsBanner />
+      </div>
+      <div className="main-iconList">
+        <IconList />
       </div>
     </>
   );

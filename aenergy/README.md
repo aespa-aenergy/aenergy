@@ -4,6 +4,15 @@
 
 ### `npm install react-slick slick-carousel`
 
+### `npm install react-simple-south-korea-map-chart`
+
+### `npm install framer-motion`
+
+### `npm install recharts`
+
+### `npm install @amcharts/amcharts5`
+
+npm install @amcharts/amcharts5-geodata
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

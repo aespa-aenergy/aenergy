@@ -17,10 +17,8 @@ function Header() {
           </Link>
         </div>
         <nav className="header_nav">
-          <Link to="/team">팀 소개</Link>
-          <Link to="/conpro">지역별 사용량</Link>
-          <Link to="/production">지역별 발전량</Link>
-          <Link to="/graphs">그래프</Link>
+          <Link to="/mapchart">지도 통계</Link>
+          <Link to="/chat">부지 추천</Link>
         </nav>
       </div>
     </header>

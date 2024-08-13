@@ -9,8 +9,6 @@ function SelectYearGraph({
   onRegionChange,
   graphData,
 }) {
-  console.log("Rendering SelectYearGraph with:", { view, region, graphData });
-
   // 데이터 유효성 검사
   if (!graphData || Object.keys(graphData).length === 0) {
     console.error("Invalid graphData in SelectYearGraph:", graphData);
@@ -32,8 +30,11 @@ function SelectYearGraph({
             </option>
           ))}
         </select>
+        <p>단위: Mwh</p>
       </div>
-      <ZoomGraph className="zoom-graph" data={graphData} />
+      <div className="zoom-graph">
+        <ZoomGraph className="zoom-graph" data={graphData} />
+      </div>
       <hr />
     </div>
   );

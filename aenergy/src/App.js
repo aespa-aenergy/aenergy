@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes, useLocation } from 'react-router-dom';
 import Main from './pages/mainpage.jsx';
 import ConsumptionProduction from './pages/consumptionProduction.jsx';
 import Header from './components/header.jsx';
@@ -8,29 +8,29 @@ import ChatPage from './pages/chatpage.jsx';
 import './App.css';
 import ScrollToTop from './scrollToTop.js';
 
-const App = () => {
+const AppContent = () => {
+  const location = useLocation(); // 현재 경로 가져오기
+
   return (
-    <Router>
+    <>
       <Header />
       <ScrollToTop />
       <Routes>
         <Route path="/" element={<Main />} />
-        <Route path="/conpro" element={<ConsumptionProduction />} />
+        <Route path="/mapchart" element={<ConsumptionProduction />} />
         <Route path="/chat" element={<ChatPage />} />
-      </Routes> 
-      <Footer/>
+      </Routes>
+      {location.pathname !== "/chat" && <Footer />} {/* /chat 페이지가 아닐 때만 Footer 렌더링 */}
+    </>
+  );
+};
+
+const App = () => {
+  return (
+    <Router>
+      <AppContent />
     </Router>
   );
 };
 
 export default App;
-
-/**
- * 
- * <Link to="/chatbot">Chatbot</Link>
-        <Link to="/predictions">Predictions</Link>
-
-        <Route path='/chatbot' element={<Chatbot />}/>
-        <Route path='/chatbot' element={<Predictions />}/>
-        
- */

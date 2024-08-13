@@ -1,0 +1,51 @@
+.footer {
+    background-image: url("../../Banner/footer_bg.png");
+    background-size: cover; /* 배경 이미지를 화면에 맞게 확장 */
+    background-repeat: no-repeat; /* 배경 이미지 반복 방지 */
+    background-position: center bottom; /* 이미지의 아래쪽을 기준으로 위치 */
+    height: 500px; /* 화면 전체 높이 사용 */
+    color: white;
+    padding: 40px 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end; 
+    margin-top: 300px;
+}
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer-logo img{
+    width: 200px;
+}
+.footer-links {
+    margin-bottom: 20px;
+}
+
+.footer-links a {
+    color: white;
+    margin: 0 15px;
+    text-decoration: none;
+    font-size: 18px;
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: #aaaaaa;
+}
+
+.footer-social a {
+    color: white;
+    margin: 0 10px;
+    font-size: 24px;
+    transition: color 0.3s ease;
+}
+
+.footer-social a:hover {
+    color: #aaaaaa;
+}
