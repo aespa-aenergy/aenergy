@@ -37,6 +37,25 @@
 4. langserve가 실행됨
    ![image](https://github.com/user-attachments/assets/53ce2b4e-1b03-4416-8327-2ab49eaf96cf)
 
+5. 도커를 띄운 리눅스 환경에 접속
+6. 아래 명령어로 ngrox 다운
+   $ curl -s https://ngrok-agent.s3.amazonaws.com/ngrok.asc \
+	| sudo tee /etc/apt/trusted.gpg.d/ngrok.asc >/dev/null \
+	&& echo "deb https://ngrok-agent.s3.amazonaws.com buster main" \
+	| sudo tee /etc/apt/sources.list.d/ngrok.list \
+	&& sudo apt update \
+	&& sudo apt install ngrok
+7. ngrok에서는 개인당 하나의 도메인을 무료로 줌. - 도메인이 2개 필요(하나는 프론트 하나는 백엔드)
+   ngrok 계정 연결
+   (winter - ngrok config add-authtoken 2keOacchGwN9itiJfrp2KLTzk53_q7mUJAbE6HMNEzgJUgnp)
+   (ningning - ngrok config add-authtoken 2WNcdM9JDk7vMBok2lKC19gKkFC_3AWrQZENi8EFabG8BfAex)
+8. winter가 받은 도메인 - https://honest-trivially-herring.ngrok-free.app
+   ningning이 받은 도메인 - https://ad95-183-101-98-59.ngrok-free.app
+9. 리눅스 환경을 두개로 만든 다음, winter 계정으로 연결해서 프론트 명령어 작성, 다른 하나 환경에서는 ningning 계정으로 접속해서 두번째 명령어(백엔드)로 도메인-로컬 포워딩
+   $ ngrok http domain=https://honest-trivially-herring.ngrok-free.app 80 (프론트)
+   $ ngrok http domain=https://ad95-183-101-98-59.ngrok-free.app 8000 (백엔드)
+10. https://honest-trivially-herring.ngrok-free.app 주소로 접속하면 끝
+
 
 
 
