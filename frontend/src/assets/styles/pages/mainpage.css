@@ -38,7 +38,6 @@ video {
   transform: translate(-50%, -80%);
   color: white;
   text-align: center;
-  font-size: 55px;
   word-spacing: 5px;
   font-weight: 700;
   letter-spacing: 4px;
@@ -48,22 +47,11 @@ video {
 }
 
 .mainbanner_text p {
+  font-size: 4em;
   display: inline-block;
   opacity: 0;
   transform: translateY(100%);
   animation: reveal 1s cubic-bezier(0.01, 0, 0.175, 1) forwards;
-}
-
-.mainbanner_btn {
-  width: 30%;
-  height: 50px;
-  font-weight: bold;
-  border-radius: 30px;
-  background-color: rgba(0, 0, 0, 0);
-  color: #ffffff;
-  border: 1px solid white;
-  font-size: 20px;
-  font-weight: 100;
 }
 
 .mainbanner_arrow_container {
@@ -118,16 +106,16 @@ video {
   border-radius: 15px;
   text-align: center;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  height: 42vh;
+  height: 70%;
 }
 
 .banner-item1 h3 {
-  font-size: 1.5rem;
+  font-size: 1.9rem;
   margin-bottom: 15px;
 }
 
 .banner-item1 p {
-  font-size: 1.1rem;
+  font-size: 1.5rem;
   line-height: 1.5;
   padding: 20px;
   font-weight: 200;
@@ -205,7 +193,7 @@ video {
 }
 
 .banner-content3 img.team-image {
-  width: 70%;
+  width: 40vw;
   height: auto;
   display: block;
   margin: 0 auto; /* 이미지 중앙 정렬 */
@@ -239,7 +227,7 @@ video {
 }
 
 .dots_custom li.slick-active button {
-  background-color: #4424b7;
+  background-color: #373a56;
 }
 
 /* SolarPowerPlantMap.css */
@@ -247,50 +235,56 @@ video {
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 1000px;
+  height: 100vh;
   color: #ffffff;
+  padding-right: 100px;
+}
+.plant-map svg{
+  height: 100%;
+
 }
 
 .plant-map {
   flex: 1;
-  padding: 30px 0;
-  margin: 100px;
   border-radius: 30px;
+  width: 100% !important; 
+  max-width: 1000px; 
+  max-height: 1500px;
 }
+
 .plant-current-status {
   flex: 1;
-  max-width: 80%; /* Ensures the text container doesn't take too much space */
-  padding: 20px;
   display: flex;
   flex-direction: column;
   text-align: center;
-  border-radius: 20px;
-  padding-left: 80px;
 }
 
 .map-description {
-  margin-bottom: 50px; /* 2번 영역과의 간격 */
+  margin-bottom: 100px; /* 2번 영역과의 간격 */
   text-align: center;
   justify-content: flex-start;
 }
 
 .map-description h1{
+  font-size: 3em;
   padding-bottom: 10px;
 }
 
 .map-description p{
   font-weight: 100;
+  font-size: 1.5em;
 }
 
 .total-plant{
   margin-bottom: 50px;
+  font-size: 2em;
 }
 /* news */
 .news-grid {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 20px; /* 아이템 사이의 간격 */
+  gap: 100px; /* 아이템 사이의 간격 */
   padding: 100px;
   background-color: #1b2339; /* 배경 색상 */
 }
@@ -299,10 +293,10 @@ video {
   display: flex;
   background-color: #1b2339; /* 배경 색상 */
   color: white;
-  width: calc(50% - 10px); /* 두 개의 열 */
-  margin-bottom: 50px;
+  width: calc(50% - 300px); /* 두 개의 열 */
   border-radius: 8px;
   overflow: hidden;
+  height: 20vh;
 }
 
 .news-image {
@@ -311,7 +305,6 @@ video {
   display: flex;
   align-items: center;
   justify-content: center;
-  max-height: 200px;
 }
 
 .news-image img {
@@ -387,13 +380,13 @@ video {
 .platform-description{
   width: 1500px;
   margin: 0 auto;
-  padding-top: 40px;
+  padding-top: 100px;
   font-weight: 200;
-  font-size: 20px;
+  font-size: 1.5em;
 }
 
 .platform-description p {
   text-align: center;
-  word-spacing: 3px;
-  line-height: 40px;
+  word-spacing: 2px;
+  line-height: 250%;
 }

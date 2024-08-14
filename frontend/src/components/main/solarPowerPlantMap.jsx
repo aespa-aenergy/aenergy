@@ -108,8 +108,8 @@ function SolarPowerPlantMap() {
           </div>
           <div className="plant-chart">
             <div className="total-plant">
-              <h2>전국 태양광 발전소</h2>
-              <h3>160,754개소</h3>
+              <h3>전국 태양광 발전소</h3>
+              <p>160,754개소</p>
             </div>
             <ResponsiveContainer width="100%" height={400}>
               <PieChart>

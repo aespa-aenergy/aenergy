@@ -15,7 +15,7 @@ function MainBanner() {
       </video>
       <div className="mainbanner_text">
         <div>
-          <p>에너지관리의 혁신,</p>
+          <p>에너지관리의 혁신,</p> <br/>
           <p>aenergy에서 시작하세요</p>
         </div>
       </div>

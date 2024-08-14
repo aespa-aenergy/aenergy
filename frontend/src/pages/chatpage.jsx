@@ -1,10 +1,11 @@
 import React, { useState, useEffect, useRef } from "react";
 import "../assets/styles/pages/chatpage.css";
-import BotIcon from "../assets/chat/leaf.png";
+import BotIcon from "../assets/chat/bot.png";
 import UserIcon from "../assets/chat/user.png";
 import InfoIcon from "../assets/chat/info.png";
+import LoadingGif from "../assets/chat/writing-loading.gif"; // 로딩 GIF 이미지 가져오기
 
-const ChatMessage = ({ type, text }) => {
+const ChatMessage = ({ type, text, isLoading }) => {
   return (
     <div className={`message-${type}`}>
       <img
@@ -12,7 +13,13 @@ const ChatMessage = ({ type, text }) => {
         alt={`${type} icon`}
         className="icon"
       />
-      <div className={`message-bubble-${type}`}>{text}</div>
+      <div className={`message-bubble-${type}`}>
+        {isLoading ? (
+          <img src={LoadingGif} alt="Loading..." className="loading-gif" />
+        ) : (
+          text
+        )}
+      </div>
     </div>
   );
 };
@@ -20,6 +27,7 @@ const ChatMessage = ({ type, text }) => {
 const ChatPage = () => {
   const [message, setMessage] = useState("");
   const [chatHistory, setChatHistory] = useState([]);
+  const [loading, setLoading] = useState(false); // 로딩 상태 관리
   const chatBodyRef = useRef(null);
 
   const handleMessageChange = (event) => {
@@ -37,6 +45,9 @@ const ChatPage = () => {
       // 메시지 전송 후 입력 필드 초기화
       setMessage("");
 
+      // 로딩 상태로 설정
+      setLoading(true);
+
       try {
         const res = await fetch("http://localhost:8000/chat", {
           method: "POST",
@@ -53,14 +64,17 @@ const ChatPage = () => {
         });
 
         const data = await res.json();
-        // 서버 응답을 채팅 기록에 추가
+
+        // 로딩 상태 해제하고, 서버 응답을 채팅 기록에 추가
+        setLoading(false);
         setChatHistory((prevHistory) => [
           ...prevHistory,
           { type: "bot", text: data.response },
         ]);
       } catch (error) {
         console.error("Failed to send message:", error);
-        // 오류 발생 시 에러 메시지를 추가
+        // 로딩 상태 해제하고, 오류 메시지를 추가
+        setLoading(false);
         setChatHistory((prevHistory) => [
           ...prevHistory,
           { type: "bot", text: "Failed to send message. Please try again." },
@@ -74,7 +88,7 @@ const ChatPage = () => {
     if (chatBodyRef.current) {
       chatBodyRef.current.scrollTop = chatBodyRef.current.scrollHeight;
     }
-  }, [chatHistory]);
+  }, [chatHistory, loading]);
 
   return (
     <div className="chat-container">
@@ -100,9 +114,13 @@ const ChatPage = () => {
             </p>
           </div>
         ) : (
-          chatHistory.map((chat, index) => (
-            <ChatMessage key={index} type={chat.type} text={chat.text} />
-          ))
+          <>
+            {chatHistory.map((chat, index) => (
+              <ChatMessage key={index} type={chat.type} text={chat.text} />
+            ))}
+            {loading && <ChatMessage type="bot" isLoading={true} />}{" "}
+            {/* 로딩 중일 때 로딩 메시지 표시 */}
+          </>
         )}
       </div>
       <div className="message-input-container">

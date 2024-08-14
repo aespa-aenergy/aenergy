@@ -8,12 +8,13 @@
 
 .chat-header {
   color: #1b2339;
-  font-size: 15px;
+  font-size: 1.7em;
   font-weight: bold;
   display: flex;
   align-items: center;
   box-shadow: 0 1px #1b2339;
   z-index: 1000; 
+  padding: 10px 0;
 }
 
 .chat-body {
@@ -34,13 +35,13 @@
 }
 
 .welcome-message h1 {
-  font-size: 24px;
+  font-size: 3em;
   color: #002b5b;
   margin-bottom: 10px;
 }
 
 .welcome-message p {
-  font-size: 16px;
+  font-size: 2em;
   color: #1b2339;
 }
 
@@ -72,6 +73,7 @@
   padding: 10px 15px;
   max-width: 50%;
   position: relative;
+  font-size: 1.5em;
 }
 
 .message-bubble-user {
@@ -79,9 +81,10 @@
   color: white;
   border-radius: 15px;
   padding: 10px 15px;
-  max-width: 50%;
+  max-width: 60%;
   margin-left: auto;
   position: relative;
+  font-size: 1.5em;
 }
 
 .icon {
@@ -107,18 +110,19 @@
   flex-grow: 1;
   border: 1px solid #ddd;
   border-radius: 5px;
-  padding: 10px;
-  font-size: 14px;
+  padding: 30px;
+  font-size: 1.3em;
   margin-right: 10px;
   outline: none;
 }
 
 .message-send-button {
   background-color: #002b5b;
+  font-size: 1.3em;
   color: white;
   border: none;
   border-radius: 5px;
-  padding: 10px 15px;
+  padding: 30px;
   cursor: pointer;
 }
 
@@ -128,4 +132,18 @@
 
 .message-send-button:active {
   background-color: #001f3f;
+}
+
+.message-bubble-bot {
+  background-color: #e1e9f1;
+  color: #000;
+  border-radius: 10px;
+  padding: 15px;
+  max-width: 50%;
+  position: relative;
+}
+
+.loading-gif {
+  width: 30px; /* 로딩 GIF의 크기 설정 */
+  height: auto;
 }
