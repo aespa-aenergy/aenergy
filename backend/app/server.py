@@ -5,7 +5,7 @@ from typing import List, Union
 from langserve.pydantic_v1 import BaseModel, Field
 from langchain_core.messages import HumanMessage, AIMessage, SystemMessage
 from langserve import add_routes
-from chain import chain
+from chain import chain as chain_chain
 from chat import chain as chat_chain
 from translator import chain as EN_TO_KO_chain
 from llm import llm as model
@@ -49,7 +49,7 @@ async def redirect_root_to_docs():
 
 """
 
-add_routes(app, chain, path="/prompt")
+add_routes(app, chain_chain, path="/prompt")
 
 
 class InputChat(BaseModel):
