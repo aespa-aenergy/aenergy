@@ -5,16 +5,23 @@ FROM python:3.11.9
 WORKDIR /app
 
 # Copy the requirements file
-COPY requirements.txt .
+#COPY app/requirements.txt ./
+COPY app/ /app/
 
 # Install the required dependencies
 RUN pip install --no-cache-dir -r requirements.txt
 
 # Copy the FastAPI application code
-COPY app/ .
+#COPY app/ .
 
-# 데이터셋과 인덱스를 생성하는 스크립트 실행
-#RUN python app/rag.py
+# ollama 패키지 다운로드 및 설치
+RUN curl -fsSL https://ollama.com/install.sh | sh
 
-# Command to run the FastAPI application
-CMD ["uvicorn", "server:app", "--host", "0.0.0.0", "--port", "8000"]
+# start.sh 스크립트 복사
+COPY start.sh /start.sh
+
+# start.sh에 실행 권한 부여
+RUN chmod +x /start.sh
+
+# Command to run the custom start script
+CMD ["/start.sh"]
