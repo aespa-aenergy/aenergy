@@ -83,6 +83,12 @@ const ChatPage = () => {
     }
   };
 
+  const handleKeyPress = (event) => {
+    if (event.key === "Enter") {
+      handleSendMessage();
+    }
+  };
+
   // 새로운 메시지가 추가될 때마다 스크롤을 맨 아래로 이동
   useEffect(() => {
     if (chatBodyRef.current) {
@@ -129,6 +135,7 @@ const ChatPage = () => {
           className="message-input"
           value={message}
           onChange={handleMessageChange}
+          onKeyPress={handleKeyPress} // Enter 키 이벤트 핸들러 추가
           placeholder="input message"
         />
         <button className="message-send-button" onClick={handleSendMessage}>
