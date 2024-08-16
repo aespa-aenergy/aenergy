@@ -3,7 +3,7 @@ import "../assets/styles/pages/chatpage.css";
 import BotIcon from "../assets/chat/bot.png";
 import UserIcon from "../assets/chat/user.png";
 import InfoIcon from "../assets/chat/info.png";
-import LoadingGif from "../assets/chat/writing-loading.gif"; // 로딩 GIF 이미지 가져오기
+import LoadingGif from "../assets/chat/writing-loading.gif";
 
 const ChatMessage = ({ type, text, isLoading }) => {
   return (
@@ -17,7 +17,7 @@ const ChatMessage = ({ type, text, isLoading }) => {
         {isLoading ? (
           <img src={LoadingGif} alt="Loading..." className="loading-gif" />
         ) : (
-          text
+          <span dangerouslySetInnerHTML={{ __html: text }} />
         )}
       </div>
     </div>
@@ -27,7 +27,7 @@ const ChatMessage = ({ type, text, isLoading }) => {
 const ChatPage = () => {
   const [message, setMessage] = useState("");
   const [chatHistory, setChatHistory] = useState([]);
-  const [loading, setLoading] = useState(false); // 로딩 상태 관리
+  const [loading, setLoading] = useState(false);
   const chatBodyRef = useRef(null);
 
   const handleMessageChange = (event) => {
@@ -44,9 +44,7 @@ const ChatPage = () => {
 
       // 메시지 전송 후 입력 필드 초기화
       setMessage("");
-
-      // 로딩 상태로 설정
-      setLoading(true);
+      setLoading(true); // 로딩 상태로 설정
 
       try {
         const res = await fetch("http://localhost:8000/chat", {
@@ -63,24 +61,79 @@ const ChatPage = () => {
           }),
         });
 
-        const data = await res.json();
+        if (!res.body) {
+          throw new Error("ReadableStream not supported");
+        }
 
-        // 로딩 상태 해제하고, 서버 응답을 채팅 기록에 추가
-        setLoading(false);
+        const reader = res.body.getReader();
+        const decoder = new TextDecoder();
+        let botMessage = "";
+
+        // 타이핑 애니메이션 초기화
         setChatHistory((prevHistory) => [
           ...prevHistory,
-          { type: "bot", text: data.response },
+          { type: "bot", text: "", isLoading: true },
         ]);
+
+        // 서버로부터 데이터를 스트리밍으로 읽기
+        while (true) {
+          const { done, value } = await reader.read();
+          if (done) break;
+
+          const chunk = decoder.decode(value, { stream: true });
+          botMessage += chunk;
+
+          // "." 뒤에 <br/>을 추가하여 줄바꿈 처리
+          const formattedMessage = botMessage.replace(/\./g, ".<br/>");
+
+          // 실시간으로 메시지 업데이트
+          setChatHistory((prevHistory) => {
+            const newHistory = [...prevHistory];
+            newHistory[newHistory.length - 1] = {
+              type: "bot",
+              text: formattedMessage,
+              isLoading: false,
+            };
+            return newHistory;
+          });
+        }
+
+        setLoading(false); // 로딩 상태 해제
       } catch (error) {
         console.error("Failed to send message:", error);
-        // 로딩 상태 해제하고, 오류 메시지를 추가
         setLoading(false);
-        setChatHistory((prevHistory) => [
-          ...prevHistory,
-          { type: "bot", text: "Failed to send message. Please try again." },
-        ]);
+        streamMessage("Failed to send message. Please try again.", "bot"); // 에러 메시지 타이핑 애니메이션으로 표시
       }
     }
+  };
+
+  const streamMessage = (fullMessage, type = "bot") => {
+    // "." 뒤에 <br/>을 추가하여 줄바꿈 처리
+    const formattedMessage = fullMessage.replace(/\./g, ".<br/>");
+
+    let index = 0;
+
+    setChatHistory((prevHistory) => [
+      ...prevHistory,
+      { type, text: "" }, // 빈 메시지 추가하여 애니메이션 준비
+    ]);
+
+    const interval = setInterval(() => {
+      index++;
+      setChatHistory((prevHistory) => {
+        const lastMessage = prevHistory[prevHistory.length - 1];
+        const updatedMessage =
+          lastMessage.text + formattedMessage.slice(index - 1, index); // 문자를 한 번에 하나씩 추가
+        const newHistory = [
+          ...prevHistory.slice(0, -1),
+          { ...lastMessage, text: updatedMessage },
+        ];
+        return newHistory;
+      });
+      if (index >= formattedMessage.length) {
+        clearInterval(interval);
+      }
+    }, 50); // 글자당 50ms 간격으로 추가
   };
 
   const handleKeyPress = (event) => {
@@ -89,7 +142,6 @@ const ChatPage = () => {
     }
   };
 
-  // 새로운 메시지가 추가될 때마다 스크롤을 맨 아래로 이동
   useEffect(() => {
     if (chatBodyRef.current) {
       chatBodyRef.current.scrollTop = chatBodyRef.current.scrollHeight;
@@ -102,7 +154,7 @@ const ChatPage = () => {
         <span>
           <img src={BotIcon} className="icon" alt="bot icon" />
         </span>
-        AENERGY Bot
+        YEPPI
         <span>
           <img src={InfoIcon} className="info-icon" alt="info icon" />
         </span>
@@ -113,9 +165,9 @@ const ChatPage = () => {
       >
         {chatHistory.length === 0 ? (
           <div className="welcome-message">
-            <h1>aenergy Bot에 오신 것을 환영합니다!</h1>
+            <h1>YEPPI BOT에 오신 것을 환영합니다!</h1>
             <p>
-              aenergy bot은 수많은 데이터를 통해 최적의 태양광 발전소 부지를
+              YEPPI는 수많은 데이터를 통해 최적의 태양광 발전소 부지를
               추천해드립니다.
             </p>
           </div>
@@ -135,7 +187,7 @@ const ChatPage = () => {
           className="message-input"
           value={message}
           onChange={handleMessageChange}
-          onKeyPress={handleKeyPress} // Enter 키 이벤트 핸들러 추가
+          onKeyPress={handleKeyPress}
           placeholder="input message"
         />
         <button className="message-send-button" onClick={handleSendMessage}>

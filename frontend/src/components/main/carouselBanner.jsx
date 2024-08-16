@@ -75,16 +75,16 @@ function CarouselBanner() {
             <h2>데이터의 힘으로 미래를 예측합니다.</h2>
             <div className="stats-container">
               <div className="banner-item2">
-                <h3>20,000+</h3>
-                <p>사용량</p>
+                <h3>100,000+</h3>
+                <p>학습 데이터량</p>
               </div>
               <div className="banner-item2">
-                <h3>20,000+</h3>
-                <p>사용량</p>
+                <h3>21.0%</h3>
+                <p>태양광 연평균 복합성장률 (CAGR)</p>
               </div>
               <div className="banner-item2">
-                <h3>20,000+</h3>
-                <p>사용량</p>
+                <h3>97.0%</h3>
+                <p>최대 예측 모델 정확도</p>
               </div>
             </div>
           </div>
@@ -94,7 +94,7 @@ function CarouselBanner() {
             aenergy의 혁신 뒤에는 aespa 팀이 있습니다. <br /> aenergy의 창의적인
             개발자들이 궁금하신가요?
           </h2>
-          <button className="team-button">팀 소개 보기</button>
+          <a href="https://github.com/aespa-aenergy/aenergy"><button className="team-button">팀 소개 보기</button></a>
           <img src={teamImage} alt="Team" className="team-image" />
         </div>
       </Slider>

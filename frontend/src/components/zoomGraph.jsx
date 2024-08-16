@@ -3,7 +3,7 @@ import * as am5 from "@amcharts/amcharts5";
 import * as am5xy from "@amcharts/amcharts5/xy";
 import am5themes_Animated from "@amcharts/amcharts5/themes/Animated";
 
-const ZoomGraph = ({ data }) => {
+const ZoomGraph = ({ data, view }) => {
   useLayoutEffect(() => {
     // 데이터를 AmCharts 형식으로 변환
     const chartData = Object.keys(data).map((key) => ({
@@ -61,14 +61,20 @@ const ZoomGraph = ({ data }) => {
         tooltip: am5.Tooltip.new(root, {
           labelText: "{valueY}",
         }),
+        stroke: am5.color(view === "production" ? "#a3d9ab" : "#90cbf5"), // 조건에 따른 색상 설정
       })
     );
+
+    // 여기에서 strokeWidth 설정
+    series.strokes.template.setAll({
+      strokeWidth: 2, // 선의 굵기 설정
+    });
 
     let scrollbar = chart.set(
       "scrollbarX",
       am5xy.XYChartScrollbar.new(root, {
         orientation: "horizontal",
-        height: 60,
+        height: 70,
       })
     );
 
@@ -94,8 +100,14 @@ const ZoomGraph = ({ data }) => {
         valueXField: "date",
         xAxis: sbDateAxis,
         yAxis: sbValueAxis,
+        stroke: am5.color(view === "production" ? "#a3d9ab" : "#90cbf5"), // 조건에 따른 색상 설정
       })
     );
+
+    // 스크롤바 시리즈의 strokeWidth 설정
+    sbSeries.strokes.template.setAll({
+      strokeWidth: 2, // 스크롤바 선의 굵기 설정
+    });
 
     series.data.setAll(chartData);
     sbSeries.data.setAll(chartData);
@@ -106,9 +118,9 @@ const ZoomGraph = ({ data }) => {
     return () => {
       root.dispose();
     };
-  }, [data]);
+  }, [data, view]);
 
-  return <div id="chartdiv" style={{ width: "100%", height: "600px" }}></div>;
+  return <div id="chartdiv" style={{ width: "100%", height: "70vh" }}></div>;
 };
 
 export default ZoomGraph;

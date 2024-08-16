@@ -5,7 +5,7 @@ function IconList() {
     { id: 1, icon: "🏭", title: "에너지 소비 분석" },
     { id: 2, icon: "☀️", title: "신재생 에너지 발전" },
     { id: 3, icon: "📊", title: "미래 에너지 예측" },
-    { id: 4, icon: "📈", title: "효율성 평가" },
+    { id: 4, icon: "📈", title: "에너지 효율성 평가" },
     { id: 5, icon: "💬", title: "부지 추천 챗봇" },
   ];
 
