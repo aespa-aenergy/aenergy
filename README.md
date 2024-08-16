@@ -33,19 +33,28 @@
 
 1. 클론한 본 레포지토리로 이동
 2. docker-compose build로 빌드하기
-3. docker-compose up으로 실행
-4. langserve가 실행됨
+   ```
+   $ docker compose build
+   ```
+4. docker-compose up으로 실행
+   ```
+   $ docker compose up
+   ```
+5. 1분정도 기다리면 rag model이 생성되고 실행됨.
+   이후 langserver 실행됨
    ![image](https://github.com/user-attachments/assets/53ce2b4e-1b03-4416-8327-2ab49eaf96cf)
 
-5. 도커를 띄운 리눅스 환경에 접속
-6. 아래 명령어로 ngrox 다운
+7. 도커를 띄운 리눅스 환경에 접속
+8. 아래 명령어로 ngrox 다운
+   ```bash
    $ curl -s https://ngrok-agent.s3.amazonaws.com/ngrok.asc \
 	| sudo tee /etc/apt/trusted.gpg.d/ngrok.asc >/dev/null \
 	&& echo "deb https://ngrok-agent.s3.amazonaws.com buster main" \
 	| sudo tee /etc/apt/sources.list.d/ngrok.list \
 	&& sudo apt update \
 	&& sudo apt install ngrok
-7. ngrok에서는 개인당 하나의 고정 도메인을 무료로 줌. - 도메인이 2개 필요(하나는 프론트 하나는 백엔드)
+   ```
+9. ngrok에서는 개인당 하나의 고정 도메인을 무료로 줌. - 도메인이 2개 필요(하나는 프론트 하나는 백엔드)
    ngrok 계정 연결
 
    frontend
