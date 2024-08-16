@@ -50,23 +50,23 @@
 
    frontend
    토큰 설정
-   """bash
+   ```bash
    $ ngrok config add-authtoken 2keOacchGwN9itiJfrp2KLTzk53_q7mUJAbE6HMNEzgJUgnp
-   """
+   ```
    고정 도메인 deploy
-   """bash
+   ```bash
    $ ngrok http --domain=honest-trivially-herring.ngrok-free.app 80
-   """
+   ```
 
    backend
    토큰 설정
-   """bash
+   ```bash
    $ ngrok config add-authtoken 2kjiuuUYapmKiauhRsj8Q3yZj2x_2HbMS9tzryJ86WK9S9uu6
-   """
+   ```
    고정 도메인 deploy
-   """bash
+   ```bash
    $ ngrok http --domain=inviting-mutt-loosely.ngrok-free.app 8000
-   """
+   ```
 
    front domian  https://honest-trivially-herring.ngrok-free.app
    back domian  inviting-mutt-loosely.ngrok-free.app
