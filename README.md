@@ -77,8 +77,9 @@
    $ ngrok http --domain=inviting-mutt-loosely.ngrok-free.app 8000
    ```
 
-   front domian  https://honest-trivially-herring.ngrok-free.app
-   back domian  inviting-mutt-loosely.ngrok-free.app
+   [front domian](https://honest-trivially-herring.ngrok-free.app)
+
+   [back domian](inviting-mutt-loosely.ngrok-free.app)
     
 
 
