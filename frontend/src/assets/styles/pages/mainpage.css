@@ -47,7 +47,7 @@ video {
 }
 
 .mainbanner_text p {
-  font-size: 4em;
+  font-size: 5em;
   display: inline-block;
   opacity: 0;
   transform: translateY(100%);
@@ -80,28 +80,26 @@ video {
 /* css/carouselBanner.css */
 .carousel-container {
   width: 100%;
-  margin: 0 auto;
   position: relative;
+  margin-bottom: 15em;
 }
 
 .carousel-container img {
-  width: 100%;
-  height: auto;
+  width: 130vh;
   display: block;
 }
 .banner-content {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  padding: 20px;
   background-color: #ffffff; /* 배경 색상 */
   color: rgb(255, 255, 255);
-  height: 540px; /* 슬라이드 높이 */
+  height: 55vh; /* 슬라이드 높이 */
 }
 
 .banner-item1 {
-  width: 25%;
-  padding: 30px;
+  width: 20%;
+  padding: 35px;
   background-color: #1b2339;
   border-radius: 15px;
   text-align: center;
@@ -110,13 +108,13 @@ video {
 }
 
 .banner-item1 h3 {
-  font-size: 1.9rem;
+  font-size: 2rem;
   margin-bottom: 15px;
 }
 
 .banner-item1 p {
-  font-size: 1.5rem;
-  line-height: 1.5;
+  font-size: 1.7rem;
+  line-height: 1.8;
   padding: 20px;
   font-weight: 200;
 }
@@ -129,12 +127,12 @@ video {
   padding: 100px;
   background-color: #fff;
   color: #333;
-  height: 540px;
+  height: 55vh;
 }
 
 .banner-content2 h2 {
-  font-size: 3rem;
-  margin-bottom: 30px;
+  font-size: 4rem;
+  margin-bottom: 1.5em;
   padding-bottom: 50px;
   white-space: nowrap;
   text-align: center;
@@ -154,7 +152,7 @@ video {
 }
 
 .banner-item2 h3 {
-  font-size: 3rem;
+  font-size: 4rem;
   color: #3366ff;
   padding-bottom: 20px;
 }
@@ -168,35 +166,37 @@ video {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 40px;
+  padding: 50px;
   background-color: #fff;
   color: #333;
-  height: 540px;
+  height: 55vh;
   text-align: center;
 }
 
 .banner-content3 h2 {
-  font-size: 2rem;
-  margin-bottom: 50px;
+  font-size: 3rem;
+  margin-bottom: 1em;
 }
 
 .team-button {
+  width: 8vw;
+  height: 10%;
   padding: 10px 20px;
-  font-size: 1rem;
+  font-size: 1.5rem;
   font-weight: 700;
   color: #333;
   background-color: #fff;
-  border: 2px solid #333;
-  border-radius: 20px;
+  border: 3px solid #333;
+  border-radius: 50px;
   cursor: pointer;
-  margin-bottom: 30px;
 }
 
 .banner-content3 img.team-image {
-  width: 40vw;
+  width: 50vw;
   height: auto;
   display: block;
   margin: 0 auto; /* 이미지 중앙 정렬 */
+  margin-top: 7em;
 }
 
 .dots_custom {
@@ -235,7 +235,7 @@ video {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  height: 110vh;
   color: #ffffff;
   padding-right: 100px;
 }
@@ -260,14 +260,14 @@ video {
 }
 
 .map-description {
-  margin-bottom: 100px; /* 2번 영역과의 간격 */
+  margin-bottom: 10em; /* 2번 영역과의 간격 */
   text-align: center;
   justify-content: flex-start;
 }
 
 .map-description h1{
   font-size: 3em;
-  padding-bottom: 10px;
+  padding-bottom: 0.8em;
 }
 
 .map-description p{
@@ -276,7 +276,7 @@ video {
 }
 
 .total-plant{
-  margin-bottom: 50px;
+  padding-bottom: 3em;
   font-size: 2em;
 }
 /* news */
@@ -284,19 +284,20 @@ video {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 100px; /* 아이템 사이의 간격 */
+  gap: 150px; /* 아이템 사이의 간격 */
   padding: 100px;
   background-color: #1b2339; /* 배경 색상 */
+  margin-bottom: 30em;
 }
 
 .news-container {
   display: flex;
   background-color: #1b2339; /* 배경 색상 */
   color: white;
-  width: calc(50% - 300px); /* 두 개의 열 */
+  width: calc(50% - 80px); /* 두 개의 열 */
   border-radius: 8px;
   overflow: hidden;
-  height: 20vh;
+  height: 23vh;
 }
 
 .news-image {
@@ -323,12 +324,12 @@ video {
 
 .news-content h2 {
   margin: 0 0 10px;
-  font-size: 1.0em;
+  font-size: 1.5em;
 }
 
 .news-content p {
   margin: 0;
-  font-size: 0.8em;
+  font-size: 1.3em;
   color: #9ca3af; /* 텍스트 색상 */
 }
 
@@ -336,36 +337,40 @@ video {
 .icon-list {
   text-align: center;
   padding: 20px;
+  margin-bottom: 40em;
 }
 
 .icon-list h1 {
-  font-size: 35px;
+  font-size: 3em;
   margin-bottom: 50px;
 }
 
 .icon-list-items {
   display: flex;
   justify-content: center;
-  gap: 30px;
+  gap: 40px;
 }
 
 .icon-list-item {
   display: flex;
   flex-direction: column;
   align-items: center;
+  text-align: center;
+  justify-content: center;
   color: #6c757d;
   transition: color 0.3s;
 }
 
 .icon-list-item .icon {
-  font-size: 48px;
+  font-size: 5em;
+  min-width: 150px;
   margin-bottom: 10px;
 }
 
 .icon-list-item .title {
-  font-size: 18px;
-  font-weight: 300;
-  padding: 5px;
+  text-align: center;
+  font-size: 1.5em;
+  font-weight: 100;
   color: white;
 }
 

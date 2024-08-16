@@ -138,6 +138,13 @@ function ConsumptionProduction() {
             unit="MWh"
             setColorByCount={setColorByCount}
             className="map-component"
+            tooltipCustomStyles={{
+              fontSize: "16px", // 글씨 크기
+              padding: "20px", // 박스 패딩
+              backgroundColor: "#1b2339", // 배경색
+              color: "white", // 글씨 색상
+              borderRadius: "20px",
+            }}
           />
         </motion.div>
       </div>

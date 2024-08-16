@@ -17,8 +17,9 @@ function Header() {
           </Link>
         </div>
         <nav className="header_nav">
-          <Link to="/mapchart">지도 통계</Link>
-          <Link to="/chat">부지 추천</Link>
+          <p> <a href="https://github.com/aespa-aenergy/aenergy">팀 소개</a></p>
+          <p><Link to="/mapchart">지도 통계</Link></p>
+          <p><Link to="/chat">부지 추천</Link></p>
         </nav>
       </div>
     </header>

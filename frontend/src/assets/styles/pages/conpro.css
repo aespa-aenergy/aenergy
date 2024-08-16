@@ -18,17 +18,17 @@
 .nav-bar select {
   padding: 5px;
   margin-left: 30px;
-  font-size: 1.1rem;
+  font-size: 1.4rem;
 }
 
 .months {
   display: flex;
-  gap: 50px;
+  gap: 60px;
 }
 
 .months button {
   padding: 5px 10px;
-  font-size: 1rem;
+  font-size: 1.5em;
   background-color: #f9f9f9;
   cursor: pointer;
   background-color: rgba(0, 0, 0, 0);
@@ -43,21 +43,21 @@
 
 .toggle-switch {
   width: 160px;
-  height: 40px;
+  height: 50px;
   background-color: #1b2339;
-  border-radius: 20px;
+  border-radius: 25px;
   display: flex;
   align-items: center;
   cursor: pointer;
-  margin: 10px;
+  margin: 30px;
   float: right;
 }
 
 .toggle-switch-knob {
   width: 70px;
-  height: 30px;
+  height: 40px;
   background-color: white;
-  border-radius: 15px;
+  border-radius: 20px;
   position: absolute;
   transition: transform 0.3s ease;
 }
@@ -90,7 +90,7 @@
   padding-right: 0;
   flex: 1;
   background-color: white;
-  padding-bottom: 30px;
+  padding-bottom: 11em;
   width: 100%;
   height: 100vh !important;
 }
@@ -107,11 +107,11 @@ svg.svg-map {
 }
 
 select {
-  width: 200px;
-  height: 35px;
-  background-size: 20px;
+  width: 300px;
+  height: 50px;
+  background-size: 50px;
   padding: 5px 30px 5px 10px;
-  border-radius: 4px;
+  border-radius: 10px;
   outline: 0 none;
 }
 
@@ -124,27 +124,31 @@ select option {
   width: 100%;
   height: auto;
   margin: 0 30px;
-  background-color: white;
+  background-color: #1b2339;
 }
 
 .select-year {
   width: 100%;
-  height: 50px;
+  height: 2vh;
   display: flex;
   align-items: center;
   gap: 50px;
-  color: #1b2339;
-  padding: 0px 30px;
-  font-size: 20px;
+  color: #ffffff;
+  padding: 60px 30px 20px 80px;
+  font-size: 1.6em;
 }
 
+hr {
+  color: white;
+}
 .select-year select {
   padding-right: 50px;
-  font-size: 17px;
+  font-size: 0.9em;
 }
 
 .zoom-graph {
-  margin: 40px;
+  margin: 4em;
+  margin-bottom: 10em;
   background-color: white;
 }
 
@@ -154,28 +158,32 @@ hr {
   border: 0;
 }
 .zoom-graph-description-container {
-  background-color:#ffffff;
+  background-color: #ffffff;
   color: rgb(0, 0, 0);
-  display: flex;  
-  width: 100%;  
-  height: auto; 
-  justify-content: center; 
+  display: flex;
+  width: 100%;
+  height: auto;
+  justify-content: center;
   align-items: center;
+  margin-bottom: 10em;
 }
 .graph-description-image {
   flex: 1;
+  overflow: hidden;
 }
 
 .graph-description-image img {
   width: 100%;
-  height: auto; 
-  object-fit: contain; 
-} 
+  height: 100%; /* 높이를 100%로 설정 */
+  object-fit: cover; /* 이미지가 컨테이너를 채우도록 설정 */
+  display: block; /* 이미지 주위의 여백 제거 */
+  margin: 0; /* 이미지의 여백 제거 */
+}
 .graph-description {
   flex: 1;
   padding: 100px;
   color: rgb(0, 0, 0);
-  text-align:start; 
+  text-align: start;
   max-width: 40%;
 }
 .graph-description h2 {
@@ -188,16 +196,16 @@ hr {
   margin-bottom: 20px;
   font-weight: 100;
   margin-bottom: 100px;
-  
 }
 .recommend-chatbot {
   margin-top: 200px;
   padding: 40px;
   text-align: center;
   letter-spacing: 3px;
+  margin-bottom: 13em;
 }
 
-.recommend-chatbot h1{
+.recommend-chatbot h1 {
   font-size: 4em;
 }
 
