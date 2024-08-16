@@ -24,8 +24,11 @@
 
 1. 사용 운영체제 -> linux ubuntu 22.04 LTS
 2. 본 레포지토리를 clone하기
-3. https://huggingface.co/heegyu/EEVE-Korean-Instruct-10.8B-v1.0-GGUF/tree/main 에서 ggml-model-Q5_K_M.gguf 모델 다운받기
-4. 다운받은 모델을 ollama-modelfile/EEVE-Korean-Instruct-10.8B-v1.0/ 아래에 넣기
+   ```bash
+   $ git clone https://github.com/aespa-aenergy/aenergy.git
+   ```
+3. [링크](https://huggingface.co/heegyu/EEVE-Korean-Instruct-10.8B-v1.0-GGUF/tree/main)에서 ggml-model-Q5_K_M.gguf 모델 다운받기
+4. 다운받은 모델을 ollama-modelfile/EEVE-Korean-Instruct-10.8B-v1.0/ 디렉토리에 넣기
 5. 준비 끝!
 
 
