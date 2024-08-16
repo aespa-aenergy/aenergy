@@ -45,17 +45,32 @@
 	| sudo tee /etc/apt/sources.list.d/ngrok.list \
 	&& sudo apt update \
 	&& sudo apt install ngrok
-7. ngrok에서는 개인당 하나의 도메인을 무료로 줌. - 도메인이 2개 필요(하나는 프론트 하나는 백엔드)
+7. ngrok에서는 개인당 하나의 고정 도메인을 무료로 줌. - 도메인이 2개 필요(하나는 프론트 하나는 백엔드)
    ngrok 계정 연결
-   (winter - ngrok config add-authtoken 2keOacchGwN9itiJfrp2KLTzk53_q7mUJAbE6HMNEzgJUgnp)
-   (ningning - ngrok config add-authtoken 2WNcdM9JDk7vMBok2lKC19gKkFC_3AWrQZENi8EFabG8BfAex)
-8. winter가 받은 도메인 - https://honest-trivially-herring.ngrok-free.app
-   ningning이 받은 도메인 - https://ad95-183-101-98-59.ngrok-free.app
-	내가 받은 도메인 >< - https://dove-accurate-maggot.ngrok-free.app
-9. 리눅스 환경을 두개로 만든 다음, winter 계정으로 연결해서 프론트 명령어 작성, 다른 하나 환경에서는 ningning 계정으로 접속해서 두번째 명령어(백엔드)로 도메인-로컬 포워딩
-   $ ngrok http domain=https://honest-trivially-herring.ngrok-free.app 80 (프론트)
-   $ ngrok http domain=https://ad95-183-101-98-59.ngrok-free.app 8000 (백엔드)
-10. https://honest-trivially-herring.ngrok-free.app 주소로 접속하면 끝
+
+   frontend
+   토큰 설정
+   """bash
+   $ ngrok config add-authtoken 2keOacchGwN9itiJfrp2KLTzk53_q7mUJAbE6HMNEzgJUgnp
+   """
+   고정 도메인 deploy
+   """bash
+   $ ngrok http --domain=honest-trivially-herring.ngrok-free.app 80
+   """
+
+   backend
+   토큰 설정
+   """bash
+   $ ngrok config add-authtoken 2kjiuuUYapmKiauhRsj8Q3yZj2x_2HbMS9tzryJ86WK9S9uu6
+   """
+   고정 도메인 deploy
+   """bash
+   $ ngrok http --domain=inviting-mutt-loosely.ngrok-free.app 8000
+   """
+
+   front domian  https://honest-trivially-herring.ngrok-free.app
+   back domian  inviting-mutt-loosely.ngrok-free.app
+    
 
 
 
