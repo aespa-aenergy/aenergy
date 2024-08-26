@@ -16,6 +16,7 @@ done
 cd /app/ollama-modelfile
 ollama create EEVE-Korean-10.8B -f EEVE-Korean-Instruct-10.8B-v1.0/Modelfile
 ollama run EEVE-Korean-10.8B:latest &
+cd ..
 
 # FastAPI 애플리케이션 실행
 uvicorn server:app --host 0.0.0.0 --port 8000 --app-dir /app

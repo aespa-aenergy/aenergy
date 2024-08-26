@@ -4,9 +4,10 @@ services:
       context: ./backend
       dockerfile: Dockerfile
     volumes:
-      - ./backend/app:/app/src # 마운트 경로 변경
+      - ./backend/app:/app/src
     ports:
       - "8000:8000"
+      - "8501:8501" # streamlit 포트 추가
 
   frontend:
     build:
